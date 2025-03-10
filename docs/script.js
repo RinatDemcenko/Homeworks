@@ -10,6 +10,9 @@ const region = document.querySelector('.region');
 const currency = document.querySelector('.currency');
 const languages = document.querySelector('.languages');
 
+const errorWindow = document.querySelector('.error-window');
+console.log(errorWindow);
+
 let countryName = "none";
 searchBtn.addEventListener('click', function () {
   countryName = search.value;
@@ -36,7 +39,10 @@ searchBtn.addEventListener('click', function () {
       languages.textContent = `Языки: ${languagesSpoken}`;
     })
     .catch(err => {
-
+      errorWindow.style.opacity = 0.7;
+      setTimeout(() => {
+        errorWindow.style.opacity = 0;
+      }, 2500);
     })
 });
 
