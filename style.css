@@ -87,11 +87,6 @@ html,
       transition: height 0.3s ease;
     }
 
-    #diff_one {
-      height: 30%;
-      background: linear-gradient(to top, #37ff0a, #188a12);
-    }
-
     .diff-desc {
       position: absolute;
       right: 100px;
@@ -218,4 +213,59 @@ html,
       .swiper-button-prev {
         display: none;
       }
+    }
+
+
+
+
+
+
+    .diff-level-1 {
+      height: 10%;
+      background: linear-gradient(to top, #00eaff, #0ea3ff); 
+    }
+    
+    .diff-level-2 {
+      height: 20%;
+      background: linear-gradient(to top, #0ea3ff, #00ff87); 
+    }
+    
+    .diff-level-3 {
+      height: 30%;
+      background: linear-gradient(to top, #00ff87, #3bff00); 
+    }
+    
+    .diff-level-4 {
+      height: 40%;
+      background: linear-gradient(to top, #3bff00, #d4ff00); 
+    }
+    
+    .diff-level-5 {
+      height: 50%;
+      background: linear-gradient(to top, #d4ff00, #ffeb00); 
+    }
+    
+    .diff-level-6 {
+      height: 60%;
+      background: linear-gradient(to top, #ffeb00, #ff8c00); 
+    }
+    
+    .diff-level-7 {
+      height: 70%;
+      background: linear-gradient(to top, #ff8c00, #ff4500); 
+    }
+    
+    .diff-level-8 {
+      height: 80%;
+      background: linear-gradient(to top, #ff4500, #ff0000); 
+    }
+    
+    .diff-level-9 {
+      height: 90%;
+      background: linear-gradient(to top, #ff0000, #8b0000); 
+    }
+    
+    .diff-level-10 {
+      height: 100%;
+      background: linear-gradient(to top, #8b0000, #4b0082);
     }

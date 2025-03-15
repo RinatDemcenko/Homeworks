@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Forecast</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body weatherstate="clear">
+  <video id="clearVideo" autoplay loop muted>
+    <source src="https://www.pexels.com/download/video/1309214/?fps=29.969999313354492&h=1080&w=1920" type="video/mp4">
+  </video>
+  <video id="rainVideo" autoplay loop muted>
+    <source src="https://www.pexels.com/download/video/5227364/?fps=23.97599983215332&h=1080&w=1920" type="video/mp4">
+  </video>
+  <video id="thunderVideo" autoplay loop muted>
+    <source src="https://www.pexels.com/download/video/856429/?fps=30.0&h=1080&w=1920" type="video/mp4">
+  </video>
+  <video id="cloudyVideo" autoplay loop muted>
+    <source src="https://www.pexels.com/download/video/1110142/?fps=30.0&h=1080&w=1920" type="video/mp4">
+  </video>
+  <video id="snowVideo" autoplay loop muted>
+    <source src="https://www.pexels.com/download/video/857032/?fps=29.969999313354492&h=1080&w=1920" type="video/mp4">
+  </video>
+  <div class="container">
+    <h1>Прогноз погоды</h1>
+    <div class="input-group">
+      <input type="text" id="locationInput" placeholder="Название города на английском...">
+      <label>
+        <input type="radio" name="forecastType" value="daily" checked> Дневной
+      </label>
+      <label>
+        <input type="radio" name="forecastType" value="hourly"> Почасовой
+      </label>
+      <button id="searchButton">Найти</button>
+    </div>
+    <div class="forecast">
+      <!-- Пример блока -->
+      <!-- <div class="weather-info">
+          <h2 class="location">Kosice</h2>
+          <p class="date">15.03.2025 | 1:00</p>
+          <p class="temperature">3°C</p>
+          <p class="description">Дождь</p>
+          <img src="http://cdn.weatherapi.com/weather/64x64/day/296.png" alt="" class="icon">
+      </div> -->
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
