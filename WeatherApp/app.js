@@ -92,7 +92,7 @@ for (radio of forecastTypeRadios) {
 }
 
 function getWeather(days, location) {
-  axios.get("http://api.weatherapi.com/v1/forecast.json", {
+  axios.get("https://api.weatherapi.com/v1/forecast.json", {
     params: {
       key: "34d04e668a2c43918c6135917251503",
       q: location,
