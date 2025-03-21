@@ -89,7 +89,7 @@ getPaletteButton.addEventListener('click', () => {
   paletteContainer.innerHTML = '';
   copyBootstrapButton.classList.remove('inactive');
   getPalette().then((palette) => {
-    currentPalette = [... palette];
+    currentPalette = [...palette];
     for (let i = 0; i < palette.length; i++) {
       const colorBlock = document.createElement('div');
       colorBlock.classList.add('box');
