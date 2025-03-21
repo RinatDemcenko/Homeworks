@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Генератор цветов</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="instructions">
+        <p>Клик на HEX-код цвета копирует его в буфер обмена.</p>
+        <p>Клик на нижнюю часть карточки открывает редактор цвета.</p>
+      </div>
+      <div class="picker-container">
+        <div id="picker"></div>
+        <button class="save-button">Закрыть</button>
+      </div>
+      <div class="controls">
+        <label for="creativity-slider" class="slider-label">"креативность" ИИ:</label>
+        <input type="range" id="creativity-slider" min="1" max="24" value="8" class="slider">
+        <button id="getPaletteButton" class="generate-btn">сгенерировать</button>
+      </div>
+      <div class="container">
+      </div>
+      <button class="copy-bootstrap-btn inactive" data-clipboard-text="для начала сгенерируйте цвета">Скопировать стили для Bootstrap</button>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
