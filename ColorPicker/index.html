@@ -2,11 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Генератор цветов</title>
-    <link rel="stylesheet" href="/src/styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <!-- Подключаем зависимости из node_modules -->
+    <script src="node_modules/axios/dist/axios.min.js"></script>
+    <script src="node_modules/clipboard/dist/clipboard.min.js"></script>
+    <script src="node_modules/@jaames/iro/dist/iro.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -23,10 +26,9 @@
         <input type="range" id="creativity-slider" min="1" max="24" value="8" class="slider">
         <button id="getPaletteButton" class="generate-btn">сгенерировать</button>
       </div>
-      <div class="container">
-      </div>
+      <div class="container"></div>
       <button class="copy-bootstrap-btn inactive" data-clipboard-text="для начала сгенерируйте цвета">Скопировать стили для Bootstrap</button>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <script src="src/main.js"></script>
   </body>
 </html>

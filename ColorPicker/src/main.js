@@ -1,12 +1,5 @@
-import './style.css';
-import javascriptLogo from './javascript.svg';
-import viteLogo from '/vite.svg';
-import axios from 'axios';
-import ClipboardJS from 'clipboard';
-import iro from '@jaames/iro';
-
 const creativitySlider = document.querySelector('#creativity-slider');
-document.querySelector('#creativity-slider').value = 8;
+creativitySlider.value = 8;
 let creativityValue = 0.8;
 
 const getPaletteButton = document.querySelector('.generate-btn');
@@ -57,10 +50,10 @@ let json_data = {
   palette: ["-", "#ffffff", "-", "-", "-", "-"]
 };
 
-let currentPalette = [...json_data.palette]; 
+let currentPalette = [...json_data.palette];
 
 creativitySlider.addEventListener('input', (event) => {
-  json_data.temperature = event.target.value / 10; 
+  json_data.temperature = event.target.value / 10;
 });
 
 async function getPalette() {
@@ -84,7 +77,7 @@ function selectEditSections() {
       colorPickerContainer.classList.add('visible');
       colorPickerContainer.style.left = (event.clientX - 75) + 'px';
       colorPickerContainer.style.bottom = (event.clientY) + 'px';
-      colorPicker.color.hexString = currentPalette[selectedIndex]; // Синхронизация с текущим цветом
+      colorPicker.color.hexString = currentPalette[selectedIndex];
     });
   }
 }
@@ -92,11 +85,11 @@ function selectEditSections() {
 const names = ['Светлый', 'Фон', 'Тёмный/текст', 'Основн. кнопки', 'Вторичн. кнопки', '"Инфо" кнопки'];
 
 getPaletteButton.addEventListener('click', () => {
-  json_data.palette[3] = generateDarkColor(); 
+  json_data.palette[3] = generateDarkColor();
   paletteContainer.innerHTML = '';
   copyBootstrapButton.classList.remove('inactive');
   getPalette().then((palette) => {
-    currentPalette = [...palette]; // Копировка палитры в currentPalette для кнопки Bootstrap
+    currentPalette = [... palette];
     for (let i = 0; i < palette.length; i++) {
       const colorBlock = document.createElement('div');
       colorBlock.classList.add('box');
@@ -122,7 +115,7 @@ getPaletteButton.addEventListener('click', () => {
 let changedColor = '#ffffff';
 colorPicker.on('color:change', function(color) {
   changedColor = color.hexString;
-  currentPalette[selectedIndex] = changedColor; 
+  currentPalette[selectedIndex] = changedColor;
   const targetBox = paletteContainer.querySelector(`.bottom-section[editId="${selectedIndex}"]`).parentElement;
   const topSection = targetBox.querySelector('.top-section');
   const editContainer = targetBox.querySelector('.edit-container');
@@ -135,7 +128,6 @@ saveButton.addEventListener('click', () => {
   colorPickerContainer.classList.remove('visible');
 });
 
-// Установка стилей Bootstrap в атрибут кнопки для копирования(идёт до самого копирования)
 function setBootstrapStylesToButton() {
   const bootstrapStyles = `
     .text-light { color: ${currentPalette[0]} !important; }
@@ -154,7 +146,6 @@ function setBootstrapStylesToButton() {
   copyBootstrapButton.setAttribute('data-clipboard-text', bootstrapStyles);
 }
 
-// Обработчик для кнопки "Скопировать стили для Bootstrap"
 copyBootstrapButton.addEventListener('click', () => {
-  setBootstrapStylesToButton(); // Устанавливаем стили в атрибут перед копированием
+  setBootstrapStylesToButton();
 });
